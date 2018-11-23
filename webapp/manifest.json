@@ -1,67 +1,81 @@
 {
-	"_version": "1.8.0",
-	"sap.app": {
-		"id": "simplifique.custos",
-		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"applicationVersion": {
-			"version": "1.0.0"
-		},
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
-		"resources": "resources.json",
-		"ach": "ach"
-	},
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "simplifique.custos",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "Negociação Custos",
+        "description": "Negociação Custos",
+        "resources": "resources.json",
+        "ach": "ach"
+    },
 
-	"sap.ui": {
-		"technology": "UI5",
-		"icons": {
-			"icon": "",
-			"favIcon": "",
-			"phone": "",
-			"phone@2": "",
-			"tablet": "",
-			"tablet@2": ""
-		},
-		"deviceTypes": {
-			"desktop": true,
-			"tablet": true,
-			"phone": true
-		}
-	},
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
 
-	"sap.ui5": {
-		"rootView": {
-			"viewName": "simplifique.custos.view.App",
-			"type": "XML",
-			"async": true,
-			"id": "app"
-		},
-		"dependencies": {
-			"minUI5Version": "1.30.0",
-			"libs": {
-				"sap.ui.core": {},
-				"sap.m": {},
-				"sap.ui.layout": {},
+    "sap.ui5": {
+        "extends": {
+            "component": "simplifique.telaneg.base.Component",
+            "minVersion": "0.1.0",
+            "extensions": {
+                "sap.ui.viewExtensions": {
+                    "simplifique.telaneg.base.view.TaskList": {
+                        "Columns": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.custos.view.TaskList.Columns",
+                            "type": "XML"
+                        },
+                        "Cells": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.custos.view.TaskList.Cells",
+                            "type": "XML"
+                        }
+                    }
+                }
+            }
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
                 "custom.libs.external.polyfill": {}
-			}
-		},
-		"contentDensities": {
-			"compact": true,
-			"cozy": true
-		},
-		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "simplifique.custos.i18n.i18n"
-				}
-			}
-		},
-		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
-		}
-	}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "simplifique.custos.i18n.i18n"
+                }
+            }
+        },
+        "resources": {
+            "css": [{
+                "uri": "css/style.css"
+            }]
+        }
+    }
 }

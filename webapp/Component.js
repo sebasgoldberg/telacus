@@ -1,25 +1,10 @@
-import TelaNegComponent from "cp/simplifique/telaneg/Component";
+import TelaNegComponent from "simplifique/telaneg/base/Component";
 import models from "simplifique/custos/model/models";
 
 export default TelaNegComponent.extend("simplifique.custos.Component", {
 
     metadata: {
-        customizing: {
-            "sap.ui.viewExtensions": {
-                "cp.simplifique.telaneg.view.TaskList": {
-                    "Columns": {
-                        className: "sap.ui.core.Fragment",
-                        fragmentName: "simplifique.custos.view.TaskList.Columns",
-                        type: "XML"
-                    },
-                    "Cells": {
-                        className: "sap.ui.core.Fragment",
-                        fragmentName: "simplifique.custos.view.TaskList.Cells",
-                        type: "XML"
-                    }
-                },
-            },
-        },
+        manifest: "json",
     },
 
     /**
