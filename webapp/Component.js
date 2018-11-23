@@ -1,7 +1,7 @@
 import TelaNegComponent from "simplifique/telaneg/base/Component";
-import models from "simplifique/custos/model/models";
+import models from "simplifique/telaneg/custos/model/models";
 
-export default TelaNegComponent.extend("simplifique.custos.Component", {
+export default TelaNegComponent.extend("simplifique.telaneg.custos.Component", {
 
     metadata: {
         manifest: "json",

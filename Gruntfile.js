@@ -96,7 +96,7 @@ module.exports = function(grunt) {
                 options: {
                     resources: {
                         cwd: "transp",
-                        prefix: "sap/ui/demo/basicTemplate"
+                        prefix: "simplifique/telaneg/custos"
                     },
                     dest: "<%= dir.dist %>",
                     compatVersion: "1.52",

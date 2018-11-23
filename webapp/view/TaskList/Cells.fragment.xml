@@ -8,6 +8,35 @@
                                             }
                                         }"
                                         />
-    
+                                    <ObjectStatus text="{FornecedorID}" />
+                                    <ObjectStatus text="{fornecedor/Nome}" wrapping="true" />
+                                    <Text text="{Descricao}"  wrapping="true" />
+
+                                    <ObjectStatus text="{
+                                        path: 'ApuracaoDe',
+                                        type: 'sap.ui.model.type.Date',
+                                        formatOptions: { UTC: true, style: 'short' }
+                                        }"
+                                        visible="{
+                                            parts: [ {path: 'TipoNegociacao'} ],
+                                            formatter: '.formatter.apuracaoDeVisible'
+                                            }"
+                                        />
+
+                                    <ObjectStatus text="{
+                                        path: 'ApuracaoAte',
+                                        type: 'sap.ui.model.type.Date',
+                                        formatOptions: { UTC: true, style: 'short' }
+                                        }" />
+
+                                    <ObjectStatus text="{status/Descricao}"
+                                         />
+
+                                    <Text text="{
+                                        parts: [ {path: 'Usuario'} ],
+                                        formatter: '.formatter.lowercase'
+                                        }"  wrapping="true" 
+                                        />
+
 </core:FragmentDefinition>
 

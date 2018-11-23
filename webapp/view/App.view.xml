@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="simplifique.custos.controller.App"
+	controllerName="simplifique.telaneg.custos.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true"
 	xmlns="sap.m">

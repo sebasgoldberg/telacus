@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-    "simplifique/custos/model/formatter"
+    "simplifique/telaneg/custos/model/formatter"
 ], function() {
     "use strict";
 

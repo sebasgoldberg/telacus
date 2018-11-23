@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-    "simplifique/custos/controller/App.controller"
+    "simplifique/telaneg/custos/controller/App.controller"
 ], function(oController) {
     "use strict";
 

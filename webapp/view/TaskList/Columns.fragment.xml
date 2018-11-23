@@ -4,5 +4,44 @@
                                     <Text text="Negociação"/>
                                 </header>
                             </Column>
-    
+                            <Column width="10%" minScreenWidth="Desktop" demandPopin="true">
+                                <header>
+                                    <Text text="Fornecedor"/>
+                                </header>
+                            </Column>
+                            <Column width="18%" minScreenWidth="Desktop">
+                                <header>
+                                    <Text text="Nome"/>
+                                </header>
+                            </Column>
+                            <Column width="18%" hAlign="Left" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                <header>
+                                    <Text text="Descrição"/>
+                                </header>
+                            </Column>
+
+                            <Column minScreenWidth="Phone" >
+                                <header>
+                                    <Text text="Vigência De" />
+                                </header>
+                            </Column>
+
+                            <Column minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Vigência Até" />
+                                </header>
+                            </Column>
+
+                            <Column minScreenWidth="Phone" demandPopin="true" id="idStatusColumn" >
+                                <header>
+                                    <Text text="Status" />
+                                </header>
+                            </Column>
+
+                            <Column minScreenWidth="Phone" demandPopin="true" id="idUsuarioColumn">
+                                <header>
+                                    <Text text="Usuário" />
+                                </header>
+                            </Column>
+
 </core:FragmentDefinition>
