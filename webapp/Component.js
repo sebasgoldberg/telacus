@@ -1,10 +1,25 @@
-import UIComponent from "sap/ui/core/UIComponent";
-import models from "sap/ui/demo/basicTemplate/model/models";
+import TelaNegComponent from "cp/simplifique/telaneg/Component";
+import models from "simplifique/custos/model/models";
 
-export default UIComponent.extend("sap.ui.demo.basicTemplate.Component", {
+export default TelaNegComponent.extend("simplifique.custos.Component", {
 
     metadata: {
-        manifest: "json"
+        customizing: {
+            "sap.ui.viewExtensions": {
+                "cp.simplifique.telaneg.view.TaskList": {
+                    "Columns": {
+                        className: "sap.ui.core.Fragment",
+                        fragmentName: "simplifique.custos.view.TaskList.Columns",
+                        type: "XML"
+                    },
+                    "Cells": {
+                        className: "sap.ui.core.Fragment",
+                        fragmentName: "simplifique.custos.view.TaskList.Cells",
+                        type: "XML"
+                    }
+                },
+            },
+        },
     },
 
     /**
@@ -15,7 +30,7 @@ export default UIComponent.extend("sap.ui.demo.basicTemplate.Component", {
     init: function() {
 
         // call the base component's init function
-        UIComponent.prototype.init.apply(this, arguments);
+        TelaNegComponent.prototype.init.apply(this, arguments);
 
         // set the device model
         this.setModel(models.createDeviceModel(), "device");

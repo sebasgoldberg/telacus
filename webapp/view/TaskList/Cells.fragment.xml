@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+                                    <ObjectIdentifier title="{
+                                        path: 'ID',
+                                        type: 'sap.ui.model.odata.type.String',
+                                        constraints: {
+                                            isDigitSequence : true,
+                                            maxLength : 10
+                                            }
+                                        }"
+                                        />
+    
+</core:FragmentDefinition>
+

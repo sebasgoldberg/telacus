@@ -1,7 +1,7 @@
 import Controller from "sap/ui/core/mvc/Controller";
-import formatter from "sap/ui/demo/basicTemplate/model/formatter";
+import formatter from "simplifique/custos/model/formatter";
 
-export default Controller.extend("sap.ui.demo.basicTemplate.controller.App", {
+export default Controller.extend("simplifique.custos.controller.App", {
 
     formatter: formatter,
 
