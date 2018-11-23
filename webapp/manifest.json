@@ -32,7 +32,7 @@
 
     "sap.ui5": {
         "extends": {
-            "component": "simplifique.telaneg.base.Component",
+            "component": "simplifique.telaneg.base",
             "minVersion": "0.1.0",
             "extensions": {
                 "sap.ui.viewExtensions": {
@@ -47,6 +47,57 @@
                             "fragmentName": "simplifique.telaneg.custos.view.TaskList.Cells",
                             "type": "XML"
                         }
+                    },
+                    "simplifique.telaneg.base.view.TaskDetail": {
+                        "Actions": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.TaskDetail.Actions",
+                            "type": "XML"
+                        },
+                        "InformacaoGeralSubsections": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.TaskDetail.InformacaoGeralSubsections",
+                            "type": "XML"
+                        },
+                        "Abrangencia": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.TaskDetail.Abrangencia",
+                            "type": "XML"
+                        },
+                        "AbrangenciaSubsections": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.TaskDetail.AbrangenciaSubsections",
+                            "type": "XML"
+                        }
+                    },
+                    "simplifique.telaneg.base.view.ItemsNegociacao": {
+                        "Toolbar": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.ItemsNegociacao.Toolbar",
+                            "type": "XML"
+                        },
+                        "Columns": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.ItemsNegociacao.Columns",
+                            "type": "XML"
+                        }
+                    },
+                    "simplifique.telaneg.base.view.ComentariosNegociacao": {
+                        "RejeicaoFornecedorSubSection": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.Empty",
+                            "type": "XML"
+                        },
+                        "ComentarioAcordoSubSection": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "simplifique.telaneg.custos.view.Empty",
+                            "type": "XML"
+                        }
+                    }
+                },
+                "sap.ui.controllerExtensions": {
+                    "simplifique.telaneg.base.controller.TaskDetail": {
+                        "controllerName": "simplifique.telaneg.custos.controller.TaskDetail"
                     }
                 }
             }
