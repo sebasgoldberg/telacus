@@ -47,21 +47,36 @@
                     >
                     <template>
 
-                        <m:Input value="{
-                            path: 'simulacao/Custo',
-                            type: 'sap.ui.model.odata.type.Decimal',
-                            constraints: {
-                                precision: 12,
-                                scale: 2
-                                }
-                            }"
-                            submit="onSubmit"
-                            enabled="{view>/isNegociacaoEditavel}"
-                            maxLength="16"
-                            textAlign="Right"
-                            description=""
+                        <m:VBox
                             visible="{= !${IsGenerico} }"
-                            />
+                            >
+
+                            <m:Input value="{
+                                path: 'simulacao/Custo',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2
+                                    }
+                                }"
+                                submit="onSubmit"
+                                enabled="{view>/isNegociacaoEditavel}"
+                                maxLength="16"
+                                textAlign="Right"
+                                description=""
+                                />
+
+                            <m:Text text="{
+                                path: 'informacao/CustoBruto',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2 }
+                                }" wrapping="true"
+                                visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                />
+
+                        </m:VBox>
 
                     </template>
                 </Column>
@@ -73,21 +88,38 @@
                     width="7%"
                     >
                     <template>
-                        <m:Input value="{
-                            path: 'simulacao/Desconto',
-                            type: 'sap.ui.model.odata.type.Decimal',
-                            constraints: {
-                                precision: 12,
-                                scale: 2
-                                }
-                            }"
-                            submit="onSubmit"
-                            enabled="{view>/isNegociacaoEditavel}"
-                            maxLength="16"
-                            textAlign="Right"
-                            description=""
+
+                        <m:VBox
                             visible="{= !${IsGenerico} }"
-                            />
+                            >
+
+                            <m:Input value="{
+                                path: 'simulacao/Desconto',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2
+                                    }
+                                }"
+                                submit="onSubmit"
+                                enabled="{view>/isNegociacaoEditavel}"
+                                maxLength="16"
+                                textAlign="Right"
+                                description=""
+                                />
+
+                            <m:Text text="{
+                                path: 'informacao/Desconto',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2 }
+                                }" wrapping="true"
+                                visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                />
+
+                        </m:VBox>
+
                     </template>
                 </Column>
 
@@ -98,21 +130,38 @@
                     width="7%"
                     >
                     <template>
-                        <m:Input value="{
-                            path: 'simulacao/DespesasAcessorias',
-                            type: 'sap.ui.model.odata.type.Decimal',
-                            constraints: {
-                                precision: 12,
-                                scale: 2
-                                }
-                            }"
-                            submit="onSubmit"
-                            enabled="{view>/isNegociacaoEditavel}"
-                            maxLength="16"
-                            textAlign="Right"
-                            description=""
+
+                        <m:VBox
                             visible="{= !${IsGenerico} }"
-                            />
+                            >
+
+                            <m:Input value="{
+                                path: 'simulacao/DespesasAcessorias',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2
+                                    }
+                                }"
+                                submit="onSubmit"
+                                enabled="{view>/isNegociacaoEditavel}"
+                                maxLength="16"
+                                textAlign="Right"
+                                description=""
+                                />
+
+                            <m:Text text="{
+                                path: 'informacao/DespesasAcessorias',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2 }
+                                }" wrapping="true"
+                                visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                />
+
+                        </m:VBox>
+
                     </template>
                 </Column>
 
@@ -122,15 +171,32 @@
                     hAlign="Right"
                     >
                     <template>
-                        <m:Text text="{
-                            path: 'simulacao/PMZNovo',
-                            type: 'sap.ui.model.odata.type.Decimal',
-                            constraints: {
-                                precision: 12,
-                                scale: 2 }
-                            }" wrapping="true"
+
+                        <m:VBox
                             visible="{= !${IsGenerico} }"
-                            />
+                            >
+
+                            <m:Text text="{
+                                path: 'simulacao/PMZNovo',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2 }
+                                }" wrapping="true"
+                                />
+
+                            <m:Text text="{
+                                path: 'informacao/PMZNovo',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2 }
+                                }" wrapping="true"
+                                visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                />
+
+                        </m:VBox>
+
                     </template>
                 </Column>
 
@@ -139,22 +205,39 @@
                     tooltip="Preço Venda [BRL]"
                     width="7%">
                     <template>
-                        <m:Input value="{
-                            path: 'simulacao/PrecoVenda',
-                            type: 'sap.ui.model.odata.type.Decimal',
-                            constraints: {
-                                precision: 12,
-                                scale: 2
-                                }
-                            }"
-                            submit="onSubmit"
-                            enabled="{view>/isNegociacaoEditavel}"
-                            id="precoVendaEdit"
-                            maxLength="16"
-                            textAlign="Right"
-                            description=""
+
+                        <m:VBox
                             visible="{= !${IsGenerico} }"
-                            />
+                            >
+
+                            <m:Input value="{
+                                path: 'simulacao/PrecoVenda',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2
+                                    }
+                                }"
+                                submit="onSubmit"
+                                enabled="{view>/isNegociacaoEditavel}"
+                                id="precoVendaEdit"
+                                maxLength="16"
+                                textAlign="Right"
+                                description=""
+                                />
+
+                            <m:Text text="{
+                                path: 'informacao/PrecoVenda',
+                                type: 'sap.ui.model.odata.type.Decimal',
+                                constraints: {
+                                    precision: 12,
+                                    scale: 2 }
+                                }" wrapping="true"
+                                visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                />
+
+                        </m:VBox>
+
                     </template>
                 </Column>
 
@@ -165,18 +248,36 @@
                     >
                     <template>
 
-                        <m:ObjectStatus
+                        <m:VBox
                             visible="{= !${IsGenerico} }"
-                            text="{
-                                path: 'simulacao/Margem1',
-                                type: 'sap.ui.model.odata.type.Decimal',
-                                constraints: { scale: 2 }
-                                }"
-                            state="{
-                                parts: [ {path: 'simulacao/Margem1'}, {path: 'informacao/MargemTeorica'} ],
-                                formatter: '.formatter.margemStatus'
-                                }"
-                                />
+                            >
+
+                            <m:ObjectStatus
+                                text="{
+                                    path: 'simulacao/Margem1',
+                                    type: 'sap.ui.model.odata.type.Decimal',
+                                    constraints: { scale: 2 }
+                                    }"
+                                state="{
+                                    parts: [ {path: 'simulacao/Margem1'}, {path: 'informacao/MargemTeorica'} ],
+                                    formatter: '.formatter.margemStatus'
+                                    }"
+                                    />
+
+                            <m:ObjectStatus
+                                visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                text="{
+                                    path: 'informacao/Margem1',
+                                    type: 'sap.ui.model.odata.type.Decimal',
+                                    constraints: { scale: 2 }
+                                    }"
+                                state="{
+                                    parts: [ {path: 'simulacao/Margem1'}, {path: 'informacao/MargemTeorica'} ],
+                                    formatter: '.formatter.margemStatus'
+                                    }"
+                                    />
+
+                        </m:VBox>
 
                     </template>
                 </Column>
@@ -187,28 +288,37 @@
                     hAlign="Right"
                     >
                     <template>
-                        <!--
-                        <m:Text text="{
-                            path: 'simulacao/Margem2',
-                            type: 'sap.ui.model.odata.type.Decimal',
-                            constraints: { scale: 2 }
-                            }"
-                            wrapping="true"
+
+                        <m:VBox
                             visible="{= !${IsGenerico} }"
-                            />
-                        -->
-                        <m:ObjectStatus
-                            visible="{= !${IsGenerico} }"
-                            text="{
-                                path: 'simulacao/Margem2',
-                                type: 'sap.ui.model.odata.type.Decimal',
-                                constraints: { scale: 2 }
-                                }"
-                            state="{
-                                parts: [ {path: 'simulacao/Margem2'}, {path: 'informacao/MargemTeorica'} ],
-                                formatter: '.formatter.margemStatus'
-                                }"
-                                />
+                            >
+
+                            <m:ObjectStatus
+                                text="{
+                                    path: 'simulacao/Margem2',
+                                    type: 'sap.ui.model.odata.type.Decimal',
+                                    constraints: { scale: 2 }
+                                    }"
+                                state="{
+                                    parts: [ {path: 'simulacao/Margem2'}, {path: 'informacao/MargemTeorica'} ],
+                                    formatter: '.formatter.margemStatus'
+                                    }"
+                                    />
+
+                            <m:ObjectStatus
+                                text="{
+                                    path: 'simulacao/Margem2',
+                                    type: 'sap.ui.model.odata.type.Decimal',
+                                    constraints: { scale: 2 }
+                                    }"
+                                state="{
+                                    parts: [ {path: 'simulacao/Margem2'}, {path: 'informacao/MargemTeorica'} ],
+                                    formatter: '.formatter.margemStatus'
+                                    }"
+                                    visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                    />
+
+                        </m:VBox>
 
                     </template>
                 </Column>
@@ -236,28 +346,50 @@
                     >
                     <template>
 
-                        <m:VBox visible="{= !${IsGenerico} }">
-                            <m:ObjectStatus
-                                text="{
-                                    path: 'simulacao/IC',
-                                    type: 'sap.ui.model.odata.type.Decimal',
-                                    constraints: { scale: 2 }
-                                    }" wrapping="true"
-                                visible="{
-                                    parts: [ {path: 'informacao/MenorPrecoMercado'} ],
-                                    formatter: '.formatter.isNotZero'
-                                    }"
-                                state="{
-                                    path: 'simulacao/IC',
-                                    formatter: '.formatter.icStatus'
-                                    }"
-                                />
-                            <m:Text text="---"
-                                visible="{
-                                    parts: [ {path: 'informacao/MenorPrecoMercado'} ],
-                                    formatter: '.formatter.isZero'
-                                    }"
-                                />
+                        <m:VBox
+                            visible="{= !${IsGenerico} }"
+                            >
+
+                            <m:VBox >
+                                <m:ObjectStatus
+                                    text="{
+                                        path: 'simulacao/IC',
+                                        type: 'sap.ui.model.odata.type.Decimal',
+                                        constraints: { scale: 2 }
+                                        }" wrapping="true"
+                                    visible="{
+                                        parts: [ {path: 'informacao/MenorPrecoMercado'} ],
+                                        formatter: '.formatter.isNotZero'
+                                        }"
+                                    state="{
+                                        path: 'simulacao/IC',
+                                        formatter: '.formatter.icStatus'
+                                        }"
+                                    />
+                                <m:Text text="---"
+                                    visible="{
+                                        parts: [ {path: 'informacao/MenorPrecoMercado'} ],
+                                        formatter: '.formatter.isZero'
+                                        }"
+                                    />
+                            </m:VBox>
+
+                            <m:VBox >
+                                <m:ObjectStatus
+                                    text="{
+                                        path: 'informacao/IC',
+                                        type: 'sap.ui.model.odata.type.Decimal',
+                                        constraints: { scale: 2 }
+                                        }" wrapping="true"
+                                    state="{
+                                        path: 'simulacao/IC',
+                                        formatter: '.formatter.icStatus'
+                                        }"
+                                    visible="{view_ext>/ExibirInformacoesAtuaisItems}"
+                                    />
+                           </m:VBox>
+
+
                         </m:VBox>
 
                     </template>
