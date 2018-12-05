@@ -18,7 +18,7 @@
                 <Column label="{
                     parts: [ {path: 'tipoNegociacao/ID'}, {path: 'TipoItemMercID'} ],
                     formatter: '.formatter.formatDescricaoItemMerc'
-                    }" width="10%" >
+                    }" width="8%" >
                     <template>
                         <m:Text text="{
                             parts: [ {path: 'itemMerc/ID'}, {path: 'itemMerc/Type'} ],
@@ -27,7 +27,7 @@
                     </template>
                 </Column>
 
-                <Column label="Descrição" width="25%">
+                <Column label="Descrição" width="15%">
                     <template>
                         <m:Text text="{itemMerc/Nome}" wrapping="true" />
                     </template>
@@ -44,10 +44,6 @@
                     tooltip="Custo Bruto [BRL]"
                     hAlign="Right"
                     width="7%"
-                    visible="{
-                        parts: [ {path: 'TipoAbrangencia'} ],
-                        formatter: '.formatter.isTipoAbrangenciaCentroRef'
-                        }"
                     >
                     <template>
 
@@ -64,7 +60,15 @@
                                 }"
                                 change="onChangeReplicarEmFilhos"
                                 submit="onSubmit"
-                                enabled="{= ${view>/isNegociacaoEditavel} &amp;&amp; !${IsDerivado} &amp;&amp; !${IsTransferido} }"
+                                enabled="{
+                                    parts: [
+                                        {path: 'negociacao/TipoAbrangencia'},
+                                        {path: 'view>/isNegociacaoEditavel'},
+                                        {path: 'IsDerivado'},
+                                        {path: 'IsTransferido'}
+                                        ],
+                                    formatter: '.formatter.isCustoBrutoEnabled'
+                                    }"
                                 maxLength="16"
                                 textAlign="Right"
                                 description=""
@@ -87,7 +91,7 @@
 
                 <Column label="Desconto"
                     id="descontoColumn"
-                    tooltip="Desconto [BRL]"
+                    tooltip="Desconto [%]"
                     hAlign="Right"
                     width="7%"
                     >
@@ -132,10 +136,6 @@
                     tooltip="Despesas Acessoria [BRL]"
                     hAlign="Right"
                     width="7%"
-                    visible="{
-                        parts: [ {path: 'TipoAbrangencia'} ],
-                        formatter: '.formatter.isTipoAbrangenciaCentroRef'
-                        }"
                     >
                     <template>
 
@@ -152,7 +152,16 @@
                                 }"
                                 change="onChangeReplicarEmFilhos"
                                 submit="onSubmit"
-                                enabled="{= ${view>/isNegociacaoEditavel} &amp;&amp; !${IsDerivado} &amp;&amp; !${IsTransferido} }"
+                                enabled="{
+                                    parts: [
+                                        {path: 'negociacao/TipoAbrangencia'},
+                                        {path: 'view>/isNegociacaoEditavel'},
+                                        {path: 'IsDerivado'},
+                                        {path: 'IsTransferido'}
+                                        ],
+                                    formatter: '.formatter.isDespesasAcessoriasEnabled'
+                                    }"
+
                                 maxLength="16"
                                 textAlign="Right"
                                 description=""
@@ -316,12 +325,12 @@
 
                             <m:ObjectStatus
                                 text="{
-                                    path: 'simulacao/Margem2',
+                                    path: 'informacao/Margem2',
                                     type: 'sap.ui.model.odata.type.Decimal',
                                     constraints: { scale: 2 }
                                     }"
                                 state="{
-                                    parts: [ {path: 'simulacao/Margem2'}, {path: 'informacao/MargemTeorica'} ],
+                                    parts: [ {path: 'informacao/Margem2'}, {path: 'informacao/MargemTeorica'} ],
                                     formatter: '.formatter.margemStatus'
                                     }"
                                     visible="{view_ext>/ExibirInformacoesAtuaisItems}"
