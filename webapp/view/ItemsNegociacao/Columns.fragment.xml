@@ -43,7 +43,7 @@
                     id="custoBrutoEditavelColumn"
                     tooltip="Custo Bruto [BRL]"
                     hAlign="Right"
-                    width="7%"
+                    width="10%"
                     >
                     <template>
 
@@ -54,8 +54,8 @@
                                 path: 'simulacao/CustoBruto',
                                 type: 'sap.ui.model.odata.type.Decimal',
                                 constraints: {
-                                    precision: 12,
-                                    scale: 2
+                                    precision: 16,
+                                    scale: 6
                                     }
                                 }"
                                 change="onChangeReplicarEmFilhos"
@@ -78,8 +78,9 @@
                                 path: 'informacao/CustoBruto',
                                 type: 'sap.ui.model.odata.type.Decimal',
                                 constraints: {
-                                    precision: 12,
-                                    scale: 2 }
+                                    precision: 16,
+                                    scale: 6
+                                    }
                                 }" wrapping="true"
                                 visible="{= !${IsGenerico} &amp;&amp; ${view_ext>/ExibirInformacoesAtuaisItems} }"
                                 />
@@ -104,14 +105,14 @@
                                 path: 'simulacao/Desconto',
                                 type: 'sap.ui.model.odata.type.Decimal',
                                 constraints: {
-                                    precision: 12,
-                                    scale: 2
+                                    precision: 8,
+                                    scale: 3
                                     }
                                 }"
                                 change="onChangeReplicarEmFilhos"
                                 submit="onSubmit"
                                 enabled="{= ${view>/isNegociacaoEditavel} &amp;&amp; !${IsDerivado} &amp;&amp; !${IsTransferido} }"
-                                maxLength="16"
+                                maxLength="8"
                                 textAlign="Right"
                                 description=""
                                 />
@@ -120,8 +121,8 @@
                                 path: 'informacao/Desconto',
                                 type: 'sap.ui.model.odata.type.Decimal',
                                 constraints: {
-                                    precision: 12,
-                                    scale: 2 }
+                                    precision: 8,
+                                    scale: 3 }
                                 }" wrapping="true"
                                 visible="{= !${IsGenerico} &amp;&amp; ${view_ext>/ExibirInformacoesAtuaisItems} }"
                                 />
@@ -135,7 +136,7 @@
                     id="despesasAcessoriasColumn"
                     tooltip="Despesas Acessoria [BRL]"
                     hAlign="Right"
-                    width="7%"
+                    width="9%"
                     >
                     <template>
 
@@ -146,8 +147,8 @@
                                 path: 'simulacao/DespesasAcessorias',
                                 type: 'sap.ui.model.odata.type.Decimal',
                                 constraints: {
-                                    precision: 12,
-                                    scale: 2
+                                    precision: 16,
+                                    scale: 6
                                     }
                                 }"
                                 change="onChangeReplicarEmFilhos"
@@ -171,8 +172,8 @@
                                 path: 'informacao/DespesasAcessorias',
                                 type: 'sap.ui.model.odata.type.Decimal',
                                 constraints: {
-                                    precision: 12,
-                                    scale: 2 }
+                                    precision: 16,
+                                    scale: 6 }
                                 }" wrapping="true"
                                 visible="{= !${IsGenerico} &amp;&amp; ${view_ext>/ExibirInformacoesAtuaisItems} }"
                                 />
