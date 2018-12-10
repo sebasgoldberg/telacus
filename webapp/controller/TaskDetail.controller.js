@@ -83,10 +83,10 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
         await this.expandRow(oRow);
         oSource.setBusy(false);
         let fValue;
+        let dValue;
         try {
-            fValue = parseFloat(
-                new Decimal().parseValue(sValue, "string")
-            );
+            dValue = new Decimal().parseValue(sValue, "string");
+            fValue = parseFloat( dValue );
         } catch (e) {
             if (e.ParseException == "ParseException")
                 return;
@@ -98,7 +98,7 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
         let m = this.getView().getModel();
         aBindingContexts
             .map( bc => bc.getPath() )
-            .forEach( sPath => m.setProperty(`${sPath}/${sRelativePath}`,fValue) );
+            .forEach( sPath => m.setProperty(`${sPath}/${sRelativePath}`,dValue) );
     },
 
 });
