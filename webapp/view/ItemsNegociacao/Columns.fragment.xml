@@ -18,7 +18,7 @@
                 <Column label="{
                     parts: [ {path: 'tipoNegociacao/ID'}, {path: 'TipoItemMercID'} ],
                     formatter: '.formatter.formatDescricaoItemMerc'
-                    }" width="8%" >
+                    }" width="6%" >
                     <template>
                         <m:Text text="{
                             parts: [ {path: 'itemMerc/ID'}, {path: 'itemMerc/Type'} ],
