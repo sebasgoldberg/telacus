@@ -9,13 +9,20 @@
                     parts: [ {path: 'tipoNegociacao/ID'}, {path: 'TipoAbrangencia'} ],
                     formatter: '.formatter.formatDescricaoItemOrg'
                     }"
-                    width="10%" >
+                    width="12%" >
                     <template>
                         <m:HBox>
-                        <core:Icon src="{
-                            parts: [ {path: 'IsDerivado'}, {path: 'IsTransferido'}, {path: 'IsGenerico'} ],
-                            formatter: '.formatter.tipoItemIcon'
-                            }" class="sapUiTinyMarginEnd" />
+                        <core:Icon
+                            src="{
+                                parts: [ {path: 'IsDerivado'}, {path: 'IsTransferido'}, {path: 'IsGenerico'} ],
+                                formatter: '.formatter.tipoItemIcon'
+                                }"
+                            tooltip="{
+                                parts: [ {path: 'IsDerivado'}, {path: 'IsTransferido'}, {path: 'IsGenerico'} ],
+                                formatter: '.formatter.tipoItemTooltip'
+                                }"
+                            class="sapUiTinyMarginEnd"
+                            />
                         <m:Text text="{itemOrg/ID}" wrapping="true" />
                         </m:HBox>
                     </template>
@@ -24,7 +31,7 @@
                 <Column label="{
                     parts: [ {path: 'tipoNegociacao/ID'}, {path: 'TipoItemMercID'} ],
                     formatter: '.formatter.formatDescricaoItemMerc'
-                    }" width="6%" >
+                    }" width="7%" >
                     <template>
                         <m:Text text="{
                             parts: [ {path: 'itemMerc/ID'}, {path: 'itemMerc/Type'} ],
@@ -39,7 +46,7 @@
                     </template>
                 </Column>
                 
-                <Column label="UMB" id="UMBColumn">
+                <Column label="UMB" id="UMBColumn" width="4%">
                     <template>
                         <m:Text text="{material/UMB}" wrapping="true" />
                     </template>
@@ -49,7 +56,7 @@
                     id="custoBrutoEditavelColumn"
                     tooltip="Custo Bruto [BRL]"
                     hAlign="Right"
-                    width="10%"
+                    width="9%"
                     >
                     <template>
 
@@ -427,7 +434,6 @@
                             noTabStop="true"
                             class="sapUiTinyMarginEnd"
                             src="sap-icon://line-chart"
-                            size="16px"
                             hoverColor="#386084"
                             tooltip="Vendas"
                             press="onMostrarVendas"
@@ -436,7 +442,6 @@
                             noTabStop="true"
                             class="sapUiTinyMarginEnd"
                             src="sap-icon://product"
-                            size="16px"
                             hoverColor="#386084"
                             tooltip="Estoque"
                             press="onMostrarEstoque"
@@ -444,7 +449,6 @@
                         <core:Icon
                             noTabStop="true"
                             src="sap-icon://commission-check"
-                            size="16px"
                             hoverColor="#386084"
                             tooltip="Impostos"
                             press="onMostrarImpostos"

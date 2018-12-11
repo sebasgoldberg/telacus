@@ -21,6 +21,19 @@ Object.assign(formatter, {
 
     isDespesasAcessoriasEnabled: isCustoBrutoEnabled,
 
+    tipoItemTooltip: function(bIsDerivado, bIsTransferido, bIsGenerico) {
+        switch (true) {
+            case bIsDerivado:
+                return "Item Derivado";
+            case bIsTransferido:
+                return "Item Transferido";
+            case bIsGenerico:
+                return "Item Genérico";
+            default:
+                return "Item Normal";
+        }
+    },
+
     tipoItemIcon: function(bIsDerivado, bIsTransferido, bIsGenerico) {
         switch (true) {
             case bIsDerivado:
