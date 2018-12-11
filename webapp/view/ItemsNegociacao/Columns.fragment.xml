@@ -149,7 +149,7 @@
                     id="despesasAcessoriasColumn"
                     tooltip="Despesas Acessoria [BRL]"
                     hAlign="Right"
-                    width="9%"
+                    width="8%"
                     >
                     <template>
 
@@ -200,6 +200,7 @@
                     id="PMZColumn"
                     tooltip="Preço Margem Zero [BRL]"
                     hAlign="Right"
+                    width="6%"
                     >
                     <template>
 
