@@ -11,7 +11,13 @@
                     }"
                     width="10%" >
                     <template>
+                        <m:HBox>
+                        <core:Icon src="{
+                            parts: [ {path: 'IsDerivado'}, {path: 'IsTransferido'}, {path: 'IsGenerico'} ],
+                            formatter: '.formatter.tipoItemIcon'
+                            }" class="sapUiTinyMarginEnd" />
                         <m:Text text="{itemOrg/ID}" wrapping="true" />
+                        </m:HBox>
                     </template>
                 </Column>
 

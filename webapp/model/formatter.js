@@ -20,6 +20,19 @@ Object.assign(formatter, {
     isCustoBrutoEnabled: isCustoBrutoEnabled,
 
     isDespesasAcessoriasEnabled: isCustoBrutoEnabled,
+
+    tipoItemIcon: function(bIsDerivado, bIsTransferido, bIsGenerico) {
+        switch (true) {
+            case bIsDerivado:
+                return "sap-icon://factory";
+            case bIsTransferido:
+                return "sap-icon://shipping-status";
+            case bIsGenerico:
+                return "sap-icon://tree";
+            default:
+                return "sap-icon://product";
+        }
+    },
 });
 
 
