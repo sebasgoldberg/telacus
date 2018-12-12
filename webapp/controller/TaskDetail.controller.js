@@ -12,6 +12,10 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
             }), 'view_ext');
     },
 
+    getMinPeriodoApuracao: function() {
+        return new Date();
+    },
+
     onExibirInformacoesAtuais: function() {
         let m = this.getView().getModel('view_ext');
         let bExibirInformacoesAtuaisItems =
