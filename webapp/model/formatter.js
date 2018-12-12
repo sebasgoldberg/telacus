@@ -46,6 +46,24 @@ Object.assign(formatter, {
                 return "sap-icon://product";
         }
     },
+
+    formatDescricaoItemMerc: function(sTipoNegociacao, sTipoItemMerc) {
+        if (!sTipoNegociacao)
+            return;
+        if (!sTipoItemMerc)
+            return;
+        let oDescricoes = {
+            M: 'Mercadoria',
+            G: 'Grupo',
+            S: 'Seção',
+        };
+        return oDescricoes[sTipoItemMerc];
+    },
+
+    formatDescricaoItemOrg: function(sTipoNegociacao, sTipoAbrangencia) {
+        return 'Centro Ref.';
+    },
+
 });
 
 
