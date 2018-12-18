@@ -115,5 +115,10 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
         this.__proto__.onSubmit.apply(this, oEvent);
     },
 
+    onSave: async function(oEvent){
+        await this.replicaEmFilhosEmExecucaoPromise;
+        this.__proto__.onSave.apply(this, oEvent);
+    },
+
 });
 
