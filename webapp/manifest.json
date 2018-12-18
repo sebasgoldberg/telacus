@@ -96,6 +96,9 @@
                     }
                 },
                 "sap.ui.controllerExtensions": {
+                    "simplifique.telaneg.base.controller.TaskList": {
+                        "controllerName": "simplifique.telaneg.custos.controller.TaskList"
+                    },
                     "simplifique.telaneg.base.controller.TaskDetail": {
                         "controllerName": "simplifique.telaneg.custos.controller.TaskDetail"
                     }

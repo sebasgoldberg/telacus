@@ -11,6 +11,14 @@ function isCustoBrutoEnabled(sTipoAbrangencia, bIsNegociacaoEditavel, bIsDerivad
 
 Object.assign(formatter, {
 
+    finalizarMessage: function(sTipoNegociacao){
+        return "Negociação de Custo concluída com sucesso.";
+    },
+
+    botaoNovoLabel: function(sTipoNegociacao){
+        return "Novo Custo";
+    },
+
     exibirInformacoesAtuaisItemsButtonIcon: function(bExibir){
         if (bExibir)
             return "sap-icon://hide";

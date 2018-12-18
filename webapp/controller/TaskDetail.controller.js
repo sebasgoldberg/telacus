@@ -10,6 +10,7 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
         this.getView().setModel(new JSONModel({
             ExibirInformacoesAtuaisItems: false,
             }), 'view_ext');
+        this.replicaEmFilhosEmExecucaoPromise = Promise.resolve();
     },
 
     getMinPeriodoApuracao: function() {
@@ -74,7 +75,11 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
         return aBindingContexts;
     },
 
-    onChangeReplicarEmFilhos: async function(oEvent) {
+    onChangeReplicarEmFilhos: function(oEvent) {
+        this.replicaEmFilhosEmExecucaoPromise = this.onChangeReplicarEmFilhosPromise(oEvent);
+    },
+
+    onChangeReplicarEmFilhosPromise: async function(oEvent) {
         let oSource = oEvent.getSource();
         let bc = oSource.getBindingContext();
         let bIsGenerico = bc.getProperty('IsGenerico');
@@ -103,6 +108,11 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
         aBindingContexts
             .map( bc => bc.getPath() )
             .forEach( sPath => m.setProperty(`${sPath}/${sRelativePath}`,dValue) );
+    },
+
+    onSubmit: async function(oEvent){
+        await this.replicaEmFilhosEmExecucaoPromise;
+        this.__proto__.onSubmit.apply(this, oEvent);
     },
 
 });
