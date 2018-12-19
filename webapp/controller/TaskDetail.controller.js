@@ -1,12 +1,15 @@
+import Controller from "simplifique/telaneg/base/controller/TaskDetail.controller";
 import formatter from 'simplifique/telaneg/custos/model/formatter';
 import JSONModel from "sap/ui/model/json/JSONModel";
 import Decimal from "sap/ui/model/odata/type/Decimal";
 
-sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
+
+export default Controller.extend("simplifique.telaneg.custos.controller.TaskDetail", {
 
     formatter: formatter,
 
-    onInit : function () {
+    onInit : function (...args) {
+        Controller.prototype.onInit.apply(this, ...args);
         this.getView().setModel(new JSONModel({
             ExibirInformacoesAtuaisItems: false,
             }), 'view_ext');
@@ -112,12 +115,12 @@ sap.ui.controller("simplifique.telaneg.custos.controller.TaskDetail", {
 
     onSubmit: async function(oEvent){
         await this.replicaEmFilhosEmExecucaoPromise;
-        this.__proto__.onSubmit.apply(this, oEvent);
+        Controller.prototype.onSubmit.apply(this, oEvent);
     },
 
     onSave: async function(oEvent){
         await this.replicaEmFilhosEmExecucaoPromise;
-        this.__proto__.onSave.apply(this, oEvent);
+        Controller.prototype.onSave.apply(this, oEvent);
     },
 
 });

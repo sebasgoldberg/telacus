@@ -1,7 +1,9 @@
 import formatter from 'simplifique/telaneg/custos/model/formatter';
+import Controller from "simplifique/telaneg/base/controller/TaskList.controller";
 
-sap.ui.controller("simplifique.telaneg.custos.controller.TaskList", {
+export default Controller.extend("simplifique.telaneg.custos.controller.TaskList", {
 
     formatter: formatter,
 
 });
+
