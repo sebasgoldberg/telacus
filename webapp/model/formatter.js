@@ -9,7 +9,7 @@ function isCustoBrutoEnabled(sTipoAbrangencia, bIsNegociacaoEditavel, bIsDerivad
         bIsNegociacaoEditavel && !bIsDerivado && ! bIsTransferido;
 }
 
-Object.assign(formatter, {
+export default Object.assign({}, formatter, {
 
     finalizarMessage: function(sTipoNegociacao){
         return "Negociação de Custo concluída com sucesso.";
@@ -74,5 +74,3 @@ Object.assign(formatter, {
 
 });
 
-
-export default formatter;
